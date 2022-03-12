@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import argparse
 
 def conf():
@@ -7,11 +5,11 @@ def conf():
     # model name
     parser.add_argument("--dataset", default="FractalDB-1000", type = str, help="model name")
     # paths
-    parser.add_argument("--path2traindb", default="./data/FractalDB-1000", type = str, help="path to FractalDB")
-    parser.add_argument("--path2valdb", default="./data/FractalDB-1000", type = str, help="path to FractalDB (basically, there is no validation set on FractalDB)")
-    parser.add_argument("--path2weight", default="./data/weight", type = str, help="path to trained weight")
+    parser.add_argument("--path2traindb", default="/content/FractalDB-Pretrained-ResNet-PyTorch/data/psdbdata", type = str, help="path to FractalDB")
+    parser.add_argument("--path2valdb", default="/content/FractalDB-Pretrained-ResNet-PyTorch/data/psdbdata", type = str, help="path to FractalDB (basically, there is no validation set on FractalDB)")
+    parser.add_argument("--path2weight", default="/content/FractalDB-Pretrained-ResNet-PyTorch/data/weight", type = str, help="path to trained weight")
     parser.add_argument('--val', default=False, action='store_true', help='If true, training is not performed.')
-    parser.add_argument('--resume', default='', type=str, help='path to latest checkpoint (default: none)')
+    parser.add_argument('--resume', default='/content/FractalDB-Pretrained-ResNet-PyTorch/data/weight/FractalDB-1000_resnet50_checkpoint.pth.tar', type=str, help='path to latest checkpoint (default: none)')
     # network settings
     parser.add_argument("--usenet", default="resnet50", type = str, help="use network")
     parser.add_argument("--epochs", default=90, type = int, help="end epoch")
@@ -30,7 +28,7 @@ def conf():
     parser.add_argument("--no-cuda", default=False, action="store_true", help="disables CUDA training")
     parser.add_argument("--gpu_id", default=-1, type = int, help="gpu id")
     parser.add_argument("--num_workers", default=8, type = int, help="num of workers (data_loader)")
-    parser.add_argument("--save-interval", default=10, type = int, help="save every N epoch")
+    parser.add_argument("--save-interval", default=5, type = int, help="save every N epoch")
     parser.add_argument("--log-interval", default=100, type=int, help="how many batches to wait before logging training status")
     parser.add_argument("--seed", default=1, type=int, help="seed")
     args = parser.parse_args()
