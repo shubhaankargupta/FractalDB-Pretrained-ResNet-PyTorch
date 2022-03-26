@@ -5,11 +5,11 @@ def conf():
     # model name
     parser.add_argument("--dataset", default="FractalDB-1000", type = str, help="model name")
     # paths
-    parser.add_argument("--path2traindb", default="/content/FractalDB-Pretrained-ResNet-PyTorch/data/psdbdata", type = str, help="path to FractalDB")
-    parser.add_argument("--path2valdb", default="/content/FractalDB-Pretrained-ResNet-PyTorch/data/psdbdata", type = str, help="path to FractalDB (basically, there is no validation set on FractalDB)")
+    parser.add_argument("--path2traindb", default="/content/FractalDB-Pretrained-ResNet-PyTorch/data/mpdbdata", type = str, help="path to FractalDB")
+    parser.add_argument("--path2valdb", default="/content/FractalDB-Pretrained-ResNet-PyTorch/data/mpdbdata", type = str, help="path to FractalDB (basically, there is no validation set on FractalDB)")
     parser.add_argument("--path2weight", default="/content/FractalDB-Pretrained-ResNet-PyTorch/data/weight", type = str, help="path to trained weight")
     parser.add_argument('--val', default=False, action='store_true', help='If true, training is not performed.')
-    parser.add_argument('--resume', default='/content/FractalDB-Pretrained-ResNet-PyTorch/data/weight/FractalDB-1000_resnet50_checkpoint.pth.tar', type=str, help='path to latest checkpoint (default: none)')
+    parser.add_argument('--resume', default='', type=str, help='path to latest checkpoint (default: none)')
     # network settings
     parser.add_argument("--usenet", default="resnet50", type = str, help="use network")
     parser.add_argument("--epochs", default=90, type = int, help="end epoch")
