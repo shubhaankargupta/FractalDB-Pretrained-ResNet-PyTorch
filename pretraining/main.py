@@ -16,7 +16,7 @@ import torch.backends.cudnn as cudnn
 import torchvision.models as models
 import torchvision.datasets as datasets
 import torchvision.transforms as transforms
-
+import torch_xla.core.xla_model as xm
 from args import conf
 from alex import bn_alexnet
 from vgg import vgg16_bn, vgg19_bn
@@ -72,11 +72,15 @@ if __name__== "__main__":
     # Option
     args = conf()
     print(args)
-
+    '''
     # GPUs
     use_cuda = not args.no_cuda and torch.cuda.is_available()
     device = torch.device("cuda" if use_cuda else "cpu")
-    
+    '''
+
+    # TPUs
+    device = xm.xla_device()
+
     #to deterministic
     cudnn.deterministic = True
     random.seed(args.seed)
