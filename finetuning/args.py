@@ -8,9 +8,9 @@ def conf():
 	parser.add_argument("--dataset", default="FractalDB-1000", type = str, help="model name (pre-training dataset)")
 	parser.add_argument("--ft_dataset", default="CIFAR10", type = str, help="model name (fine-tuning dataset)")
 	# paths
-	parser.add_argument("--path2db", default="./data/cifar10/data/", type = str, help="path to fine-tuning dataset")
+	parser.add_argument("--path2db", default="/content/CIFAR10", type = str, help="path to fine-tuning dataset")
 	parser.add_argument("--path2weight", default="./data/weight/", type = str, help="path to trained weight")
-	parser.add_argument('--resume', default='', type=str, help='path to latest checkpoint (default: none)')
+	parser.add_argument('--resume', default='/content/final-ps+mp.pth.tar', type=str, help='path to latest checkpoint (default: none)')
 	# network settings
 	parser.add_argument("--usenet", default="resnet50", type = str, help="use network")
 	parser.add_argument("--useepoch", default=90, type = int, help="use epoch")
