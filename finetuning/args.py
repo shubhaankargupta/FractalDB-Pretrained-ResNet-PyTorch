@@ -34,7 +34,7 @@ def conf():
 	parser.add_argument("--no-cuda", default=False, action="store_true", help="disables CUDA training")
 	parser.add_argument("--gpu_id", default=-1, type = int, help="gpu id")
 	parser.add_argument("--num_workers", default=8, type = int, help="num of workers(data_loader)")
-	parser.add_argument("--save-interval", default=90, type = int, help="save every N epoch")
+	parser.add_argument("--save-interval", default=10, type = int, help="save every N epoch")
 	parser.add_argument("--log-interval", default=10, type=int, help="how many batches to wait before logging training status")
 	parser.add_argument("--seed", default=1, type=int, help="seed")
 	args = parser.parse_args()
