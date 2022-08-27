@@ -81,7 +81,8 @@ def model_select(args):
 
 	# ResNet-50
 	if args.usenet == "resnet50":
-		last_layer = nn.Linear(2048, args.numof_classes)
+		#last_layer = nn.Linear(2048, args.numof_classes)
+		last_layer = nn.Linear(2048, 1000)
 		model = resnet50(pretrained=False, num_classes=args.numof_pretrained_classes)
 		weight_name = os.path.join(args.path2weight, args.dataset + "_" + args.usenet + "_epoch" + str(args.useepoch) + ".pth")
 		
