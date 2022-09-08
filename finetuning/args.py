@@ -10,7 +10,7 @@ def conf():
 	# paths
 	parser.add_argument("--path2db", default="/content/CIFAR100", type = str, help="path to fine-tuning dataset")
 	parser.add_argument("--path2weight", default="/content/FractalDB-Pretrained-ResNet-PyTorch/data/weight", type = str, help="path to trained weight")
-	parser.add_argument('--resume', default='/content/final-ps+mp.pth.tar', type=str, help='path to latest checkpoint (default: none)')
+	parser.add_argument('--resume', default='/content/final-ps+mp+fr.pth.tar', type=str, help='path to latest checkpoint (default: none)')
 	# network settings
 	parser.add_argument("--usenet", default="resnet50", type = str, help="use network")
 	parser.add_argument("--useepoch", default=90, type = int, help="use epoch")
